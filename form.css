@@ -1,0 +1,72 @@
+body{
+    background-color: rgb(219, 209, 196);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 140vh;
+    margin: 0;
+}
+.container{
+  background-color: #97bfcf;
+  padding: 40px;
+  border-radius: 15px;
+  width: 400px;    
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.form-group{
+    margin-bottom: 25px;
+}
+.form-group label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .gender-options,
+    .course-options {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+    .course-options {
+        flex-direction: column;
+      }
+      .submit-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+  
+      .submit-btn:hover {
+        background-color: #575454;
+      }
+      .output {
+        margin-top: 20px;
+        background-color: #466c85;
+        padding: 15px;
+        border-radius: 6px;
+        display: none;
+      }
+      .error {
+        color: red;
+        margin-top: 10px;
+      }
+
