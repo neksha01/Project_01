@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="form.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>LOGIN PAGE</h1>
+      <form id="user-form">
+        <div class="form-group">
+          <label for="name">NAME </label>
+          <input required type="text" placeholder="Enter your Name" id="name" />
+        </div>
+        <div class="form-group">
+          <label for="age">AGE </label>
+          <input required type="number" placeholder="Enter your Age" id="age" />
+        </div>
+        <div class="form-group">
+          <label for="gender">GENDER: </label>
+          <div class="gender-options">
+            <input id="male" required type="radio" name="gender" />MALE
+            <input id="female" required type="radio" name="gender" />FEMALE
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">EMAIL </label>
+          <input id="email" required type="email" placeholder="Enter your Email" />
+        </div>
+        <div class="form-group">
+          <label for="password">PASSWORD </label>
+          <input id=" password"  required type="password" placeholder="Enter your Password" />
+        </div>
+        <div class="form-group">
+          <label for="course">COURSE ENROLLED: </label>
+          <div class="course-options">
+            <label><input type="checkbox" />MERN STACK</label>
+
+            <label><input type="checkbox" />CYBERSECURITY</label>
+            <label> <input type="checkbox" />DATA SCIENCE </label>
+            <label> <input type="checkbox" />AI ML </label>
+          </div>
+        </div>
+        <button type="submit" id="submit-btn">SUBMIT</button>
+        <div class="error" id="error-msg"></div>
+
+        <div class="output" id="outputBox">
+          <h3>Submitted Information:</h3>
+          <p id="result"></p>
+        </div>
+      </form>
+    </div>
+
+      <script>
+        document
+          .getElementById("user-form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const errorMsg = document.getElementById("error-msg");
+            const age = parseInt(document.getElementById("age").value.trim());
+            const email = document.getElementById("email").value.trim();
+            const outputBox = document.getElementById("outputBox");
+            const result = document.getElementById("result");
+
+            errorMsg.textContent = "";
+            outputBox.style.display = "none";
+
+            if (name.length < 3) {
+              errorMsg.textContent = "Name must be atleast 3 characters long";
+            } else if (isNaN(age) || age < 18 || age > 60) {
+              errorMsg.textContent = "Age must be a number between 18 and 60.";
+            } else {
+              result.innerHTML = `<strong>Name:</strong> ${name}<br><strong>Email:</strong> ${email}<br><strong>Age:</strong> ${age}`;
+              outputBox.style.display = "block";
+            }
+          });
+      </script>
+  
+  </body>
+</html>
